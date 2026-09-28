@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>MangaTranslator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="hdr">
+    <span class="logo">MT</span>
+    <div class="hdr-text">
+      <strong>MangaTranslator Bridge</strong>
+      <span id="conn-line" class="sub">Проверка связи…</span>
+    </div>
+    <span id="dot" class="dot dot-off" aria-hidden="true"></span>
+  </header>
+
+  <section class="card">
+    <div class="row">
+      <span class="lbl">Адрес приложения</span>
+      <span id="endpoint" class="val mono">ws://127.0.0.1:8770/ws</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Страниц подключено</span>
+      <span id="tabs" class="val">0</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <span class="lbl">Провайдер</span>
+      <span id="provider" class="val">—</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Модель</span>
+      <span id="model" class="val">—</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Язык перевода</span>
+      <span id="target" class="val">—</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="lbl">Режим перевода</div>
+    <div class="seg" role="radiogroup" aria-label="Режим перевода">
+      <button id="mode-cards" class="seg-btn" type="button" role="radio" aria-checked="true">Карточки</button>
+      <button id="mode-inplace" class="seg-btn" type="button" role="radio" aria-checked="false">Вшить в картинку</button>
+    </div>
+    <p id="mode-hint" class="hint">Перевод показывается всплывающими карточками рядом с репликами.</p>
+  </section>
+
+  <button id="toggle" class="big" type="button" aria-pressed="false">Переводить эту страницу</button>
+  <p id="toggle-state" class="state">Состояние: выключено</p>
+
+  <section class="card">
+    <div class="row">
+      <span class="lbl">Прогресс</span>
+      <span id="progress" class="val">готово 0 из 0</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <label class="lbl" for="port">Порт приложения</label>
+    <div class="port-row">
+      <input id="port" type="number" inputmode="numeric" min="1" max="65535" step="1" value="8770">
+      <button id="save" class="btn" type="button">Сохранить</button>
+    </div>
+    <p id="port-msg" class="hint"></p>
+  </section>
+
+  <p id="err" class="err" hidden></p>
+
+  <p class="hint">
+    Приложение MangaTranslator должно быть запущено, а мост включён (порт 8770 по умолчанию).
+    Горячая клавиша: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Y</kbd>.
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

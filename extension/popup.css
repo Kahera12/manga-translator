@@ -1,0 +1,254 @@
+/* MangaTranslator Bridge — popup styles (dark, compact, Russian UI). */
+
+:root {
+  --bg: #12161f;
+  --card: #1a2030;
+  --line: #2a3348;
+  --text: #e8eefc;
+  --muted: #93a0bb;
+  --accent: #4c8dff;
+  --ok: #46c46b;
+  --bad: #e05b5b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 332px;
+  margin: 0;
+  padding: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.4 "Segoe UI", Roboto, sans-serif;
+}
+
+.hdr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4c8dff, #7d5cff);
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hdr-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.hdr-text strong {
+  font-size: 13px;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-radius: 50%;
+}
+
+.dot-on {
+  background: var(--ok);
+  box-shadow: 0 0 8px rgba(70, 196, 107, 0.7);
+}
+
+.dot-off {
+  background: var(--bad);
+  box-shadow: 0 0 8px rgba(224, 91, 91, 0.6);
+}
+
+.card {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 18px;
+}
+
+.lbl {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.val {
+  font-size: 12px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mono {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11px;
+}
+
+.seg {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.seg-btn {
+  flex: 1 1 0;
+  padding: 7px 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #141a27;
+  color: var(--muted);
+  font: 600 12px/1.2 "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.seg-btn:hover:not(:disabled) {
+  border-color: #3b4a66;
+  color: var(--text);
+}
+
+.seg-btn[aria-checked="true"] {
+  border-color: var(--accent);
+  background: rgba(76, 141, 255, 0.18);
+  color: var(--text);
+}
+
+.seg-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.big {
+  display: block;
+  width: 100%;
+  margin: 2px 0 4px;
+  padding: 11px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: rgba(76, 141, 255, 0.16);
+  color: var(--text);
+  font: 700 13px/1.2 "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.big:hover:not(:disabled) {
+  background: rgba(76, 141, 255, 0.26);
+}
+
+.big[aria-pressed="true"] {
+  border-color: var(--ok);
+  background: rgba(70, 196, 107, 0.18);
+}
+
+.big:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.state {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.port-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+#port {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #141a27;
+  color: var(--text);
+  font: 12px/1.2 Consolas, "Courier New", monospace;
+}
+
+#port:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.btn {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #141a27;
+  color: var(--text);
+  font: 600 12px/1.2 "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+}
+
+.hint {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.hint.ok {
+  color: var(--ok);
+}
+
+.hint.bad {
+  color: var(--bad);
+}
+
+.err {
+  margin: 0 0 8px;
+  padding: 6px 8px;
+  border: 1px solid rgba(224, 91, 91, 0.6);
+  border-radius: 8px;
+  background: rgba(224, 91, 91, 0.12);
+  color: #ffd7d7;
+  font-size: 11px;
+}
+
+kbd {
+  padding: 1px 4px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #141a27;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 10px;
+}

@@ -1,0 +1,21 @@
+# Runtime dependencies for the Real-Time Chinese Manga Translator.
+# Install:  pip install -r requirements.txt
+
+# --- screen capture / imaging ---
+mss==10.2.0
+numpy==2.3.1
+pillow==11.3.0
+opencv-python==5.0.0.93
+
+# --- OCR (PaddleOCR PP-OCRv4 models running on ONNX Runtime, fully offline) ---
+rapidocr-onnxruntime==1.4.4
+
+# --- GUI: frameless click-through overlay, tray, settings dialog ---
+PySide6==6.11.2
+
+# --- translation backend (Gemini REST) + config ---
+httpx==0.28.1
+python-dotenv==1.0.0
+
+# --- global hotkeys ---
+pynput==1.7.7

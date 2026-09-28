@@ -1,0 +1,31 @@
+# Secrets / local config
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+*.spec
+!packaging/*.spec
+
+# Runtime data (logs, cache, debug dumps)
+/runtime/
+/cache/
+*.log
+*.db
+*.db-wal
+*.db-shm
+
+# Editor
+.vscode/
+.idea/
+
+# Local tooling scratch (browser profiles, probes, screenshots live in runtime/)
+/notes/
+*.bak
